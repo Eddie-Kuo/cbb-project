@@ -31,7 +31,7 @@ function renderPostDetail(data) {
     return div;
 }
 
-//URL Search 
+//URL Search Params
 const params = new URLSearchParams(window.location.search);
 
 async function loadPost() {
