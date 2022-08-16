@@ -20,4 +20,8 @@ async function displayPosts() {
     bulletinBoard.append(listEls);
 }
 
+// add event listener to the rendered posts on the home page
+
+
 displayPosts();
+
