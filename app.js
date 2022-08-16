@@ -12,7 +12,7 @@ signOutLink.addEventListener('click', signOutUser);
 checkAuth();
 
 // grab needed DOM elements on page
-const bulletinBoard = document.getElementById('bulletin-board');
+const bulletinBoard = document.querySelector('.bulletin-board');
 
 async function displayPosts() {
     const posts = await getPosts();

@@ -1,4 +1,4 @@
-#bulletin-board {
+.bulletin-board {
     height: 100%;
     background-image: url(../assets/bulletin-bg.jpeg);
     border: 10px solid black;
