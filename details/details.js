@@ -32,6 +32,16 @@ function renderPostDetail(post) {
         }
         location.href = '../';
     });
+
+    // const user = checkAuth();
+    // if (user.id === post.user_id) {
+    //     // remove the hidden class and add in the delete button class
+    //     delButton.addEventListener('click', () => {
+    //         deletePost(post.id);
+    //     }
+    //     , location.href = '../');
+    // }
+
     
     div.classList.add('post-detail-container');
     descriptionP.classList.add('post-description');
@@ -47,20 +57,6 @@ const params = new URLSearchParams(window.location.search);
 async function loadPost() {
     const post = await getPostDetail(params.get('id'));
     const postDisplay = renderPostDetail(post);
-    
-
-    // const user = checkAuth();
-    // if (user.id === post.user_id) {
-    //     postDisplay.addEventListener('click', () => {
-    //         console.log('button clicked');
-    //     });
-    //     delButton.addEventListener('click', () => {
-    //         deletePost(post.id);
-    //     }
-    //     , location.href = '../');
-    //     console.log('user id matches');
-    // }
-
     displayBulletinBoard.append(postDisplay);
 }
 
