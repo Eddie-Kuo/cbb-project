@@ -1,12 +1,10 @@
-import { getPostDetail } from '../fetch-utils.js';
-
-
-console.log( await getPostDetail(1));
+import { getPostDetail, checkAuth } from '../fetch-utils.js';
+import { deletePost } from '../fetch-utils.js';
 
 const displayBulletinBoard = document.querySelector('.bulletin-board');
 
 // Render post detail function
-function renderPostDetail(data) {
+function renderPostDetail(post) {
 
     const div = document.createElement('div');
     const h = document.createElement('h2');
@@ -17,11 +15,23 @@ function renderPostDetail(data) {
     const inputBlock = document.createElement('input');
 
 
-    dateP.textContent = `last modified ${dateTime}`;
+    dateP.textContent = `last modified ${date}`;
     dateP.classList.add('date-text');
-    h.textContent = data.title;
-    descriptionP.textContent = data.description;
+
+    h.textContent = post.title;
+    descriptionP.textContent = post.description;
+
     delButton.textContent = 'Delete';
+    // setting up user auth to delete
+    delButton.addEventListener('click', async () => {
+        const user = checkAuth();
+        if (user.id === post.user_id) {
+            await deletePost(post.id);
+        } else {
+            alert('This is not your post to delete');
+        }
+        location.href = '../';
+    });
     
     div.classList.add('post-detail-container');
     descriptionP.classList.add('post-description');
@@ -37,6 +47,20 @@ const params = new URLSearchParams(window.location.search);
 async function loadPost() {
     const post = await getPostDetail(params.get('id'));
     const postDisplay = renderPostDetail(post);
+    
+
+    // const user = checkAuth();
+    // if (user.id === post.user_id) {
+    //     postDisplay.addEventListener('click', () => {
+    //         console.log('button clicked');
+    //     });
+    //     delButton.addEventListener('click', () => {
+    //         deletePost(post.id);
+    //     }
+    //     , location.href = '../');
+    //     console.log('user id matches');
+    // }
+
     displayBulletinBoard.append(postDisplay);
 }
 
@@ -44,6 +68,5 @@ loadPost();
 
 // displaying date
 let today = new Date(); 
-let date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
-let time = today.getHours() + ":" + today.getMinutes();
-let dateTime = date + ' ' + time;
+let date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+

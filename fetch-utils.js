@@ -59,3 +59,7 @@ export async function getPostDetail(id) {
     
     return response.data;
 }
+
+export async function deletePost(id) {
+    await client.from('posts').delete().match({ id });
+}
