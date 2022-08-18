@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(224, 234, 247);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 75px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+    width: 350px;
+    height: 375px;
+    background-color: lightblue;
+}
+
+.form-container button {
+    margin: 10px;
+}
+
