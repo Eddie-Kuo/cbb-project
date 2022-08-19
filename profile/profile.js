@@ -2,6 +2,7 @@
 import { saveProfile } from '../fetch-utils.js';
 
 const profileForm = document.querySelector('.form-container');
+const homeButton = document.querySelector('.home-button');
 
 // set the State 
 let username = '';
@@ -23,5 +24,9 @@ profileForm.addEventListener('submit', async (event) => {
 
     await saveProfile(profile);
     profileForm.reset();
+    location.href = '../index.html';
+});
+
+homeButton.addEventListener('click', () => {
     location.href = '../index.html';
 });

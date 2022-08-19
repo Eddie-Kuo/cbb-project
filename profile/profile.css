@@ -6,7 +6,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 75px;
+    /* margin: 75px; */
 }
 
 .form-container {
@@ -24,3 +24,13 @@ body {
     margin: 10px;
 }
 
+header button {
+    margin: 25px;
+    position: relative;
+    right: 30px;
+}
+
+header {
+    display: flex;
+    flex-direction: row-reverse;
+}
