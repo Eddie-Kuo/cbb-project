@@ -1,0 +1,86 @@
+:root {
+    --background: rgb(224, 234, 247);
+    --header-background: white;
+    --footer-background: rgb(243, 242, 242);
+    --text-color: rgb(7, 5, 68);
+    --label-color: rgb(75, 102, 98);
+    --placeholder-color: rgb(136, 136, 153);
+    --offset-color: rgb(217, 236, 217);
+    --action-color: rgb(77, 132, 252);
+
+    --padding: 20px;
+}
+
+body {
+    background-color: rgb(224, 234, 247);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 75px; */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    width: 350px;
+    height: 375px;
+    background: var(--offset-color);
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.form-container button {
+    margin: 10px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    height: 50px;
+    padding: 0 var(--padding);
+    display: flex;
+    gap: calc(var(--padding) / 2);
+    align-items: center;
+    background-color: var(--header-background);
+}
+
+h1 {
+    font-size: 1.2em;
+    font-weight: 800;
+}
+
+@media (min-width: 750px) {
+    header {
+        height: 75px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+header .logo {
+    height: 100%;
+}
+
+nav {
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+}
+
+nav a {
+    color: var(--text-color);
+    font-size: 1.20em;
+}
+main {
+    padding: var(--padding);
+}
+
