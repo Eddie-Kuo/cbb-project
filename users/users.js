@@ -1,10 +1,9 @@
 // import functions here
-import { getProfiles } from '../fetch-utils.js';
+import { getProfiles, signOutUser, checkAuth } from '../fetch-utils.js';
 
 
 //DOM Elements
 const userList = document.querySelector('.list');
-const homeButton = document.querySelector('.home-button');
 
 // let user_name = '';
 // let bio = '';
@@ -36,7 +35,8 @@ async function displayProfiles() {
 }
 displayProfiles();
 
-//home button for the user
-homeButton.addEventListener('click', () =>{
-    location.href = '../index.html';
-});
+//sign out link
+const signOutLink = document.getElementById('sign-out-link');
+signOutLink.addEventListener('click', signOutUser);
+// make sure we have a user
+checkAuth();

@@ -1,5 +1,76 @@
+:root {
+    --background: rgb(224, 234, 247);
+    --header-background: white;
+    --footer-background: rgb(243, 242, 242);
+    --text-color: rgb(7, 5, 68);
+    --label-color: rgb(75, 102, 98);
+    --placeholder-color: rgb(136, 136, 153);
+    --offset-color: rgb(217, 236, 217);
+    --action-color: rgb(77, 132, 252);
+
+    --padding: 20px;
+}
+
+@media (min-width: 750px) {
+    :root {
+        --padding: 35px;
+    }
+}
+
 body {
-    background-color: rgb(224, 234, 247);
+    height: 100vh;
+    font-family: 'Rubik', san-serif;
+    color: var(--text-color);
+    background: var(--background);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    height: 50px;
+    padding: 0 var(--padding);
+    display: flex;
+    gap: calc(var(--padding) / 2);
+    align-items: center;
+    background-color: var(--header-background);
+}
+
+h1 {
+    font-size: 1.2em;
+    font-weight: 800;
+}
+
+@media (min-width: 750px) {
+    header {
+        height: 75px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+header .logo {
+    height: 100%;
+}
+
+nav {
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+}
+
+nav a {
+    color: var(--text-color);
+    font-size: 1.20em;
+}
+
+main {
+    padding: var(--padding);
 }
 
 .user-list {
@@ -32,20 +103,6 @@ body {
     flex-direction: column;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-section {
-    display: flex;
-    justify-content: flex-end;
-    position: relative;
-    top: 25px;
-    right: 30px;
-}
-
 .list {
     padding: 5px;
     display: flex;
@@ -68,3 +125,4 @@ section {
     position: relative;
     top: 15px;
 }
+

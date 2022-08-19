@@ -8,12 +8,19 @@
     <link rel="stylesheet" href="profile.css">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
+
 <body>
     <header>
-        <button class="home-button">Home</button>
+        <img class="logo" src="/assets/cbb-logo.png">
+        <h1>My Profile</h1>
+        <nav>
+            <a href="../create-post/index.html">Add Post</a>
+            <a href="../index.html"> Bulletin</a>
+            <a href="../users/users.html">Users</a>
+            <a id="sign-out-link" href="../auth/index.html">Sign Out</a>
+        </nav>
     </header>
     <main>
-        <div class="bulletin-board">
             <div class="user-profile">
                 <form action="submit" class="form-container">
                     <p>Username:</p>
@@ -25,7 +32,6 @@
                     </button>
                 </form>
             </div>
-        </div>
     </main>
     
     <script type="module" src="profile.js"></script>

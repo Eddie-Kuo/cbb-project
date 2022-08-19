@@ -1,9 +1,8 @@
 // import functions here 
 import { checkAuth, saveProfile } from '../fetch-utils.js';
-import { getProfile } from '../fetch-utils.js';
+import { getProfile, signOutUser } from '../fetch-utils.js';
 
 const profileForm = document.querySelector('.form-container');
-const homeButton = document.querySelector('.home-button');
 const inputEl = document.querySelector('.username-input');
 const bioEl = document.querySelector('.bio-input');
 
@@ -30,14 +29,8 @@ profileForm.addEventListener('submit', async (event) => {
     location.href = '../index.html';
 });
 
-homeButton.addEventListener('click', () => {
-    location.href = '../index.html';
-});
 
-// async function to display profile
-// within the function use get profile function from fetch utils 
-// if statement (response) = if response is true then assign the values to the appropriate spots
-
+// pre populate form if user data already exists
 const user = checkAuth();
 
 async function displayProfile() {
@@ -49,3 +42,9 @@ async function displayProfile() {
 }
 
 displayProfile();
+
+//sign out link
+const signOutLink = document.getElementById('sign-out-link');
+signOutLink.addEventListener('click', signOutUser);
+// make sure we have a user
+checkAuth();
