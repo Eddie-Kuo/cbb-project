@@ -59,3 +59,13 @@ export async function saveProfile(profile) {
     return await client.from('profiles').upsert(profile).single();
 }
 
+// get profile/ profiles function
+export async function getProfiles() {
+    const response = await client.from('profiles').select('*');
+    return response.data;
+}
+
+export async function getProfile(id) {
+    const response = await client.from('profiles').select('*').match({ id }).single();
+    return response.data;
+}

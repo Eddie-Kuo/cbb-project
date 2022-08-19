@@ -20,16 +20,51 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
 }
 
 .user-list-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    flex-direction: column;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+section {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: 25px;
+    right: 30px;
+}
+
+.list {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 800px;
+    margin: 10px;
+}
+
+.table-heading div {
+    width: 250px;
+    text-align: center;
+    position: relative;
+    top: 15px;
 }

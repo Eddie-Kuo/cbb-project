@@ -7,7 +7,7 @@ const profileForm = document.querySelector('.form-container');
 let username = '';
 let bio = '';
 
-// form submitting event
+// form submitting event, push info to Supabase 
 profileForm.addEventListener('submit', async (event) => {
 
     event.preventDefault();
