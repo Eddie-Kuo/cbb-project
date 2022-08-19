@@ -18,6 +18,7 @@ body {
     height: 375px;
     background-color: lightblue;
     border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .form-container button {
@@ -33,4 +34,21 @@ header button {
 header {
     display: flex;
     flex-direction: row-reverse;
+}
+
+.bulletin-board {
+    height: 100%;
+    background-image: url(../assets/bulletin-bg.jpeg);
+    border: 10px solid black;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    padding: 1em;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 1em;
+
+    overflow-y: scroll;
 }
