@@ -17,6 +17,7 @@ body {
     width: 350px;
     height: 375px;
     background-color: lightblue;
+    border-radius: 5px;
 }
 
 .form-container button {

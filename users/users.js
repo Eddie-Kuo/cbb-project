@@ -4,6 +4,7 @@ import { getProfiles } from '../fetch-utils.js';
 
 //DOM Elements
 const userList = document.querySelector('.list');
+const homeButton = document.querySelector('.home-button');
 
 // let user_name = '';
 // let bio = '';
@@ -35,5 +36,7 @@ async function displayProfiles() {
 }
 displayProfiles();
 
-
-// check if we need the profile page needs to be pre loaded if account exists
+//home button for the user
+homeButton.addEventListener('click', () =>{
+    location.href = '../index.html';
+});
