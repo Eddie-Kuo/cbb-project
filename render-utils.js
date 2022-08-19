@@ -34,9 +34,14 @@ export function renderPosts(posts) {
         const contactEl = document.createElement('p');
         contactEl.textContent = post.contact;
 
+        const a = document.createElement('a');
+        a.href = `./details/?id=${post.id}`;
+
         li.append(titleEl, categoryEl, descriptionEl, contactEl);
 
-        fragment.append(li);
+        a.append(li);
+
+        fragment.append(a);
     }
 
     return fragment;

@@ -27,3 +27,23 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
     1. From "sql editor", new script and run starter schema `db/schema.sql`
     1. From "sql editor", new script and run starter category data `db/categories.sql`
     1. From "settings > api", copy URL and Key into `fetch-utils.js`
+
+## planning
+<!-- html elements for the post-it detail page that needs to be rendered upon click 
+    - Div - to hold the contents of the overall note 
+    - button - to delete the post
+    - header - for the title of the post 
+    - pTag - for the updated date of the post??
+    - pTag - for the contents of the note itself -->
+
+## Events that need to happen
+<!-- - 1 - Feature for adding note and data showing on Supabase works so can move onto the next feature 
+    - 2 - On click per post-it, user should be redirected to a new page displaying the contents of the note in detail 
+            - need to add an event listener to the post-it notes within the render function 
+
+    - 3 - note detail should include the title, updated date, and the text of the note
+            - need to create a render details function to render the existing info from supabase (active post-it notes) onto a new HTML document in the details tab 
+
+    - 4 - user will have the option to delete the note as well as add comments if needed
+
+    - 5 - ultimately, the home page should display all the notes updated to their latest changes -->
